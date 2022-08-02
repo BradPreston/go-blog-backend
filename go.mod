@@ -1,3 +1,5 @@
-module github.com/BradPreston/go-blog
+module github.com/BradPreston/go-blog-backend
 
 go 1.18
+
+require github.com/gorilla/mux v1.8.0 // indirect
