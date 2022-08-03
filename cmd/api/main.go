@@ -14,6 +14,7 @@ func main() {
 	router := mux.NewRouter()
 
 	router.HandleFunc("/posts", handlers.GetAllPosts).Methods(http.MethodGet)
+	router.HandleFunc("/posts", handlers.AddPost).Methods(http.MethodPost)
 
 	log.Println("API is running on port:", port)
 	http.ListenAndServe(port, router)
