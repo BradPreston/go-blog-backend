@@ -3,22 +3,40 @@ package main
 import (
 	"log"
 	"net/http"
-
-	"github.com/BradPreston/go-blog-backend/pkg/handlers"
-	"github.com/gorilla/mux"
+	"time"
 )
 
 var port string = ":8080"
 
-func main() {
-	router := mux.NewRouter()
+type Config struct {
+	port        string
+	environment string
+}
 
-	router.HandleFunc("/posts", handlers.GetAllPosts).Methods(http.MethodGet)
-	router.HandleFunc("/posts", handlers.AddPost).Methods(http.MethodPost)
-	router.HandleFunc("/posts/{id}", handlers.GetPost).Methods(http.MethodGet)
-	router.HandleFunc("/posts/{id}", handlers.UpdatePost).Methods(http.MethodPut)
-	router.HandleFunc("/posts/{id}", handlers.DeletePost).Methods(http.MethodDelete)
+type application struct {
+	config Config
+}
+
+func main() {
+	var cfg Config
+	cfg.port = ":8080"
+	cfg.environment = "development"
+
+	app := &application{
+		config: cfg,
+	}
+
+	srv := &http.Server{
+		Addr:         cfg.port,
+		Handler:      app.Routes(),
+		IdleTimeout:  time.Minute,
+		ReadTimeout:  10 * time.Second,
+		WriteTimeout: 30 * time.Second,
+	}
 
 	log.Println("API is running on port:", port)
-	http.ListenAndServe(port, router)
+	err := srv.ListenAndServe()
+	if err != nil {
+		log.Println(err)
+	}
 }
