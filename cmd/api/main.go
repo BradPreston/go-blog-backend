@@ -16,6 +16,7 @@ func main() {
 	router.HandleFunc("/posts", handlers.GetAllPosts).Methods(http.MethodGet)
 	router.HandleFunc("/posts", handlers.AddPost).Methods(http.MethodPost)
 	router.HandleFunc("/posts/{id}", handlers.GetPost).Methods(http.MethodGet)
+	router.HandleFunc("/posts/{id}", handlers.UpdatePost).Methods(http.MethodPut)
 
 	log.Println("API is running on port:", port)
 	http.ListenAndServe(port, router)
