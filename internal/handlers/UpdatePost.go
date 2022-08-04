@@ -8,8 +8,8 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/BradPreston/go-blog-backend/pkg/mocks"
-	"github.com/BradPreston/go-blog-backend/pkg/models"
+	"github.com/BradPreston/go-blog-backend/internal/mocks"
+	"github.com/BradPreston/go-blog-backend/internal/models"
 	"github.com/gorilla/mux"
 )
 

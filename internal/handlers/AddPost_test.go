@@ -8,7 +8,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/BradPreston/go-blog-backend/pkg/models"
+	"github.com/BradPreston/go-blog-backend/internal/models"
 )
 
 func TestAddPost(t *testing.T) {

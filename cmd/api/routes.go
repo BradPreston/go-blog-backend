@@ -3,11 +3,12 @@ package main
 import (
 	"net/http"
 
-	"github.com/BradPreston/go-blog-backend/pkg/handlers"
+	"github.com/BradPreston/go-blog-backend/internal/config"
+	"github.com/BradPreston/go-blog-backend/internal/handlers"
 	"github.com/gorilla/mux"
 )
 
-func (app *application) Routes() http.Handler {
+func Routes(app *config.AppConfig) http.Handler {
 	router := mux.NewRouter()
 	router.HandleFunc("/posts", handlers.GetAllPosts).Methods(http.MethodGet)
 	router.HandleFunc("/posts", handlers.AddPost).Methods(http.MethodPost)

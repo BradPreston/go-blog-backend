@@ -3,7 +3,7 @@ package mocks
 import (
 	"time"
 
-	"github.com/BradPreston/go-blog-backend/pkg/models"
+	"github.com/BradPreston/go-blog-backend/internal/models"
 )
 
 var Posts = []models.Post{

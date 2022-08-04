@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/BradPreston/go-blog-backend/pkg/mocks"
+	"github.com/BradPreston/go-blog-backend/internal/mocks"
 )
 
 func GetAllPosts(w http.ResponseWriter, r *http.Request) {

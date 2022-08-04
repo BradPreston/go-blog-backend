@@ -7,8 +7,8 @@ import (
 	"math/rand"
 	"net/http"
 
-	"github.com/BradPreston/go-blog-backend/pkg/mocks"
-	"github.com/BradPreston/go-blog-backend/pkg/models"
+	"github.com/BradPreston/go-blog-backend/internal/mocks"
+	"github.com/BradPreston/go-blog-backend/internal/models"
 )
 
 func AddPost(w http.ResponseWriter, r *http.Request) {

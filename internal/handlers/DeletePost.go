@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/BradPreston/go-blog-backend/pkg/mocks"
+	"github.com/BradPreston/go-blog-backend/internal/mocks"
 	"github.com/gorilla/mux"
 )
 
